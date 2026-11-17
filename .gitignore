@@ -107,3 +107,5 @@ site/manuals-data.js
 site/manuals.html
 
 !manuals/*/capture/out/*.log
+.venv/
+.venv-*/
