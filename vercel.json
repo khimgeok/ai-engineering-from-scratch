@@ -1,5 +1,5 @@
 {
-  "buildCommand": "node site/fetch-translation-coverage.js && node site/build.js && node site/build-projects.js --strict && node site/build-agents.js && node site/build-manuals.js && node site/build-search.js && node site/clean-urls.js && node site/version-assets.js",
+  "buildCommand": "node site/prebuild.js && node site/build.js && node site/build-projects.js --strict && node site/build-agents.js && node site/build-manuals.js && node site/build-search.js && node site/clean-urls.js && node site/version-assets.js",
   "outputDirectory": "site",
   "framework": null,
   "installCommand": "npm install --no-audit --no-fund",
@@ -69,6 +69,10 @@
       "destination": "/api/lesson"
     },
     {
+      "source": "/learn/:cleanPhase([a-z0-9-]+)/:cleanLesson([a-z0-9-]+)",
+      "destination": "/api/lesson?cleanPhase=:cleanPhase&cleanLesson=:cleanLesson"
+    },
+    {
       "source": "/certification",
       "destination": "/api/certification"
     },
@@ -110,6 +114,10 @@
     {
       "source": "/how-to-learn",
       "destination": "/how-to-learn.html"
+    },
+    {
+      "source": "/whats-new",
+      "destination": "/whats-new.html"
     },
     {
       "source": "/highlights",
@@ -816,7 +824,7 @@
       "permanent": true
     },
     {
-      "source": "/:page(about|catalog|glossary|roadmap|developer|contact|privacy|sponsors|projects|project|learning-paths|certifications|assessment|inside-an-ai-agent|inside-a-decompiler|inside-an-llm-serving-gpu|skills|how-to-learn|highlights).html",
+      "source": "/:page(about|catalog|glossary|roadmap|developer|contact|privacy|sponsors|projects|project|learning-paths|certifications|assessment|inside-an-ai-agent|inside-a-decompiler|inside-an-llm-serving-gpu|skills|how-to-learn|highlights|whats-new).html",
       "destination": "/:page",
       "permanent": true
     },
