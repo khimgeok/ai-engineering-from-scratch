@@ -157,3 +157,4 @@ site/lesson-code/
 .project-validation/
 projects/*/solution/output/
 projects/*/solution/demo-output/
+projects/*/solution/demo-output/
